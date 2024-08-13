@@ -3,7 +3,6 @@ const BACKEND_URL = `${process.env.BACKEND_URL}api/`;
 export default class ClientBuilder {
   constructor(url = "") {
     this.url = new URL(url, BACKEND_URL);
-    console.log("ClientBuilder", this.url);
   }
 
   toString() {
@@ -46,3 +45,12 @@ export default class ClientBuilder {
     return this;
   }
 }
+
+// Пример использования билдера
+// const client = new ClientBuilder()
+//   .addPagination(0, 10)
+//   .addSort('name', 'asc')
+//   .addFilter(100, 500)
+//   .addSearch('example');
+
+// console.log(client.toString());
